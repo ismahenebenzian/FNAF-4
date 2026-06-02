@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://blshmubm00mma"]
+
+[ext_resource type="Script" uid="uid://bg31db3s1t7ke" path="res://script/right_door.gd" id="1_s8ckj"]
+[ext_resource type="Texture2D" uid="uid://bl247xwqo1dro" path="res://assets/images/Zoom_Sol.png" id="2_kdfq7"]
+[ext_resource type="Texture2D" uid="uid://digoktbsqv77d" path="res://assets/images/Zoom_Porte_Droite.png" id="3_prkq2"]
+[ext_resource type="Shader" uid="uid://b6bq4i7wlphpd" path="res://scenes/right_door.gdshader" id="4_mupj1"]
+[ext_resource type="Texture2D" uid="uid://bmah51214wtu2" path="res://assets/images/Porte_Ferme.png" id="5_e4tfe"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g44tt"]
+shader = ExtResource("4_mupj1")
+shader_parameter/light_pos = Vector2(0.4, 0.6)
+shader_parameter/light_radius = 0.3
+shader_parameter/softness = 0.05
+shader_parameter/torch_on = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2gqes"]
+size = Vector2(650.5, 122.5)
+
+[node name="LeftDoor_tscn" type="Control" unique_id=1952389809]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_s8ckj")
+
+[node name="FloorEffect" type="TextureRect" parent="." unique_id=653249855]
+layout_mode = 0
+offset_top = -5.0
+offset_right = 1155.0
+offset_bottom = 644.0
+mouse_filter = 2
+texture = ExtResource("2_kdfq7")
+expand_mode = 1
+
+[node name="MainInterface" type="Control" parent="." unique_id=642329264]
+anchors_preset = 0
+offset_left = 27.0
+offset_right = 1160.0
+offset_bottom = 647.0
+mouse_filter = 2
+
+[node name="Zoom_Porte_gauche" type="TextureRect" parent="MainInterface" unique_id=1285698151]
+layout_mode = 0
+offset_left = -28.0
+offset_right = 1127.0
+offset_bottom = 647.0
+mouse_filter = 2
+texture = ExtResource("3_prkq2")
+expand_mode = 1
+
+[node name="DarkOverlay" type="ColorRect" parent="MainInterface/Zoom_Porte_gauche" unique_id=1905816897]
+material = SubResource("ShaderMaterial_g44tt")
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 1157.0
+offset_bottom = 650.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.003921569)
+
+[node name="DoorSprite" type="TextureRect" parent="MainInterface/Zoom_Porte_gauche" unique_id=900108066]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1154.0
+offset_bottom = 651.0
+mouse_filter = 2
+texture = ExtResource("5_e4tfe")
+expand_mode = 1
+
+[node name="ReturnZone" type="Area2D" parent="MainInterface" unique_id=1669206548]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainInterface/ReturnZone" unique_id=837010819]
+position = Vector2(597, 581)
+shape = SubResource("RectangleShape2D_2gqes")
+
+[node name="Message_Retourner" type="Label" parent="MainInterface" unique_id=1238314544]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 569.0
+offset_right = 747.0
+offset_bottom = 618.0
+text = "Tirez la souris vers le bas pour faire demi-tour
+"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="MainInterface" unique_id=1536783034]
+modulate = Color(0, 0, 0, 1)
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_left = -29.0
+offset_right = 1133.0
+offset_bottom = 645.0
+mouse_filter = 2
+
+[connection signal="mouse_entered" from="MainInterface/ReturnZone" to="." method="_on_return_zone_mouse_entered"]

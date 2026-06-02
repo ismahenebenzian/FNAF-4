@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://bd02nvl1600k5"]
+
+[ext_resource type="Script" uid="uid://ci62l5xtyjpky" path="res://script/main_room.gd" id="1_5f5qq"]
+[ext_resource type="Texture2D" uid="uid://3osfjirls5cg" path="res://assets/images/background_room.png.png" id="1_sphs3"]
+[ext_resource type="Shader" uid="uid://cosnbby2i2d54" path="res://scenes/MainRoom.gdshader" id="3_6qrsd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5f5qq"]
+shader = ExtResource("3_6qrsd")
+shader_parameter/light_pos = Vector2(0.5, 0.5)
+shader_parameter/radius = 0.18
+shader_parameter/softness = 0.08
+shader_parameter/darkness = 0.95
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sphs3"]
+size = Vector2(139.5, 367)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f5qq"]
+size = Vector2(144, 362)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qrsd"]
+size = Vector2(332.5, 304)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dtrf"]
+size = Vector2(467, 68)
+
+[node name="MainRoom_tscn" type="Control" unique_id=350285402]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = -6.0
+offset_right = 3.0
+offset_bottom = -6.0
+script = ExtResource("1_5f5qq")
+
+[node name="Background" type="TextureRect" parent="." unique_id=1914966193]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 647.0
+mouse_filter = 2
+texture = ExtResource("1_sphs3")
+expand_mode = 1
+
+[node name="DarkOverlay" type="ColorRect" parent="." unique_id=1117607675]
+material = SubResource("ShaderMaterial_5f5qq")
+layout_mode = 0
+offset_left = 5.0
+offset_top = -147.0
+offset_right = 1157.0
+offset_bottom = 840.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.9098039)
+
+[node name="Zone_PorteGauche" type="Area2D" parent="." unique_id=1124055132]
+position = Vector2(-12, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone_PorteGauche" unique_id=1378226133]
+position = Vector2(90.75, 310.5)
+shape = SubResource("RectangleShape2D_sphs3")
+
+[node name="Zone_PorteDroite" type="Area2D" parent="." unique_id=1247764526]
+position = Vector2(1139, 19)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone_PorteDroite" unique_id=2033142693]
+position = Vector2(-72, 294)
+shape = SubResource("RectangleShape2D_5f5qq")
+
+[node name="Zone_Armoire" type="Area2D" parent="." unique_id=876410465]
+position = Vector2(364, 13)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone_Armoire" unique_id=795381280]
+position = Vector2(214.25, 307)
+shape = SubResource("RectangleShape2D_6qrsd")
+
+[node name="Zone_Lit" type="Area2D" parent="." unique_id=128113318]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Zone_Lit" unique_id=2100312944]
+position = Vector2(565.5, 605)
+shape = SubResource("RectangleShape2D_6dtrf")
+
+[node name="Message_Passage_Lit" type="Label" parent="." unique_id=1235353096]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 594.0
+offset_right = 775.0
+offset_bottom = 617.0
+text = "Tirez la souris vers le bas pour regarder derrière vous !"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[connection signal="input_event" from="Zone_PorteGauche" to="." method="_on_zone_porte_gauche_input_event"]
+[connection signal="input_event" from="Zone_PorteDroite" to="." method="_on_zone_porte_droite_input_event"]
+[connection signal="input_event" from="Zone_Armoire" to="." method="_on_zone_armoire_input_event"]
+[connection signal="mouse_entered" from="Zone_Lit" to="." method="_on_zone_lit_mouse_entered"]

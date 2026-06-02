@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://crbmxb2ejvay4"]
+
+[ext_resource type="Script" uid="uid://deq7ww3odelgi" path="res://script/closet.gd" id="1_71km3"]
+[ext_resource type="Shader" uid="uid://b6bq4i7wlphpd" path="res://scenes/right_door.gdshader" id="3_3gv2m"]
+[ext_resource type="Texture2D" uid="uid://bwfbj56y6tr2h" path="res://assets/images/armoire-porte_gauche.png" id="3_cgwhh"]
+[ext_resource type="Texture2D" uid="uid://bnjuteyiraxr" path="res://assets/images/armoire-porte_droite.png" id="4_3gv2m"]
+[ext_resource type="Texture2D" uid="uid://bl247xwqo1dro" path="res://assets/images/Zoom_Sol.png" id="4_hivdx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v2322"]
+shader = ExtResource("3_3gv2m")
+shader_parameter/light_pos = Vector2(0.4, 0.6)
+shader_parameter/light_radius = 0.3
+shader_parameter/softness = 0.05
+shader_parameter/torch_on = true
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wtm2"]
+size = Vector2(650.5, 122.5)
+
+[node name="Closet_tscn" type="Control" unique_id=689505656]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_71km3")
+
+[node name="FloorEffect" type="TextureRect" parent="." unique_id=1305454754]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -5.0
+offset_right = 1161.0
+offset_bottom = 644.0
+mouse_filter = 2
+texture = ExtResource("4_hivdx")
+expand_mode = 1
+
+[node name="MainInterface" type="Control" parent="." unique_id=1557060797]
+anchors_preset = 0
+offset_right = 1148.0
+offset_bottom = 652.0
+
+[node name="FondNoir" type="ColorRect" parent="MainInterface" unique_id=273786913]
+layout_mode = 0
+offset_right = 1169.0
+offset_bottom = 657.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Porte_gauche" type="TextureRect" parent="MainInterface" unique_id=1200565388]
+layout_mode = 0
+offset_right = 484.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("3_cgwhh")
+expand_mode = 1
+
+[node name="Porte_droite" type="TextureRect" parent="MainInterface" unique_id=2134050079]
+layout_mode = 0
+offset_left = 728.0
+offset_top = -1.0
+offset_right = 1156.0
+offset_bottom = 645.0
+mouse_filter = 2
+texture = ExtResource("4_3gv2m")
+expand_mode = 1
+
+[node name="sol_armoir" type="TextureRect" parent="MainInterface" unique_id=182642025]
+layout_mode = 0
+offset_left = 16.0
+offset_top = -5.0
+offset_right = 1179.0
+offset_bottom = 635.0
+mouse_filter = 2
+texture = ExtResource("4_hivdx")
+expand_mode = 1
+
+[node name="DarkOverlay" type="ColorRect" parent="MainInterface" unique_id=409196261]
+material = SubResource("ShaderMaterial_v2322")
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 1157.0
+offset_bottom = 644.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.003921569)
+
+[node name="ReturnZone" type="Area2D" parent="MainInterface" unique_id=124019124]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MainInterface/ReturnZone" unique_id=234073151]
+position = Vector2(597, 581)
+shape = SubResource("RectangleShape2D_4wtm2")
