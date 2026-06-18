@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dd0in4eni13o7"]
+
+[ext_resource type="Script" uid="uid://gilsc1jcorey" path="res://script/screamer.gd" id="1_djatc"]
+[ext_resource type="Texture2D" uid="uid://b5ncbw73vf7xw" path="res://assets/images/screamer.png" id="2_4cf2m"]
+[ext_resource type="AudioStream" uid="uid://cidtnufd4ypp7" path="res://assets/sounds/screamer.ogg" id="3_egc83"]
+
+[node name="Screamer" type="Control" unique_id=1123641887]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_djatc")
+
+[node name="ImageScreamer" type="TextureRect" parent="." unique_id=208139361]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+texture = ExtResource("2_4cf2m")
+
+[node name="SonScreamer" type="AudioStreamPlayer" parent="." unique_id=1607050493]
+stream = ExtResource("3_egc83")
+autoplay = true
