@@ -11,10 +11,11 @@ script = ExtResource("1_djatc")
 
 [node name="ImageScreamer" type="TextureRect" parent="." unique_id=208139361]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1154.0
+offset_bottom = 649.0
 mouse_filter = 2
 texture = ExtResource("2_4cf2m")
+expand_mode = 1
 
 [node name="SonScreamer" type="AudioStreamPlayer" parent="." unique_id=1607050493]
 stream = ExtResource("3_egc83")

@@ -1,5 +1,6 @@
 extends Control
 
 func _ready():
+	TimerJeu.arreter()
 	await get_tree().create_timer(2.5).timeout
-	get_tree().change_scene_to_file("res://scenes/MainRoom.tscn")
+	get_tree().change_scene_to_file("res://scenes/menu.tscn")

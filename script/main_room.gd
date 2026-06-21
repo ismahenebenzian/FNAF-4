@@ -7,6 +7,7 @@ var can_change_scene = true
 var interaction_disabled = true
 
 func _ready():
+	TimerJeu.demarrer()
 	print("Scène main_room prête")
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	
@@ -39,7 +40,7 @@ func _on_zone_porte_gauche_input_event(_viewport, event, _shape_idx):
 func _on_zone_porte_droite_input_event(_viewport, event, _shape_idx):
 	if interaction_disabled:
 		return
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT :
 		print("Porte droite cliquée !")
 		get_tree().change_scene_to_file("res://scenes/right_door.tscn")
 

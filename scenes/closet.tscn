@@ -43,24 +43,6 @@ offset_bottom = 657.0
 mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
-[node name="Porte_gauche" type="TextureRect" parent="MainInterface" unique_id=1200565388]
-layout_mode = 0
-offset_right = 484.0
-offset_bottom = 648.0
-mouse_filter = 2
-texture = ExtResource("3_cgwhh")
-expand_mode = 1
-
-[node name="Porte_droite" type="TextureRect" parent="MainInterface" unique_id=2134050079]
-layout_mode = 0
-offset_left = 728.0
-offset_top = -1.0
-offset_right = 1156.0
-offset_bottom = 645.0
-mouse_filter = 2
-texture = ExtResource("4_3gv2m")
-expand_mode = 1
-
 [node name="sol_armoir" type="TextureRect" parent="MainInterface" unique_id=182642025]
 layout_mode = 0
 offset_left = 16.0
@@ -80,6 +62,24 @@ offset_right = 1157.0
 offset_bottom = 644.0
 mouse_filter = 2
 color = Color(0, 0, 0, 0.003921569)
+
+[node name="Porte_gauche" type="TextureRect" parent="MainInterface" unique_id=1200565388]
+layout_mode = 0
+offset_right = 484.0
+offset_bottom = 648.0
+mouse_filter = 2
+texture = ExtResource("3_cgwhh")
+expand_mode = 1
+
+[node name="Porte_droite" type="TextureRect" parent="MainInterface" unique_id=2134050079]
+layout_mode = 0
+offset_left = 728.0
+offset_top = -1.0
+offset_right = 1156.0
+offset_bottom = 645.0
+mouse_filter = 2
+texture = ExtResource("4_3gv2m")
+expand_mode = 1
 
 [node name="ReturnZone" type="Area2D" parent="MainInterface" unique_id=124019124]
 

@@ -11,12 +11,14 @@ config_version=5
 [application]
 
 config/name="FNAF - PARTIE FRONTEND (Copy)"
-run/main_scene="uid://bd02nvl1600k5"
+run/main_scene="uid://bfb5twjupdtcn"
 config/features=PackedStringArray("4.6", "Forward Plus")
+run/name="FNAF - PARTIE FRONTEND (Copy)"
 
 [autoload]
 
 MonstreManager="*uid://cbewwt3maroqn"
+TimerJeu="*uid://bv0l8sydkvfs"
 
 [physics]
 

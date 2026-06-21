@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cewaq3jdtlydl" path="res://script/bed.gd" id="1_akt7f"]
 [ext_resource type="Texture2D" uid="uid://bl247xwqo1dro" path="res://assets/images/Zoom_Sol.png" id="2_853xm"]
-[ext_resource type="Texture2D" uid="uid://b2ky35jxaukhx" path="res://assets/images/lit.jpg" id="3_x7btf"]
+[ext_resource type="Texture2D" uid="uid://bp1to7uk8dxyx" path="res://assets/images/Lit.png" id="3_853xm"]
 [ext_resource type="Shader" uid="uid://b6bq4i7wlphpd" path="res://scenes/right_door.gdshader" id="4_exsg2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g44tt"]
@@ -43,7 +43,7 @@ offset_left = -28.0
 offset_right = 1127.0
 offset_bottom = 647.0
 mouse_filter = 2
-texture = ExtResource("3_x7btf")
+texture = ExtResource("3_853xm")
 expand_mode = 1
 
 [node name="DarkOverlay" type="ColorRect" parent="MainInterface/Zoom_Lit" unique_id=1905816897]

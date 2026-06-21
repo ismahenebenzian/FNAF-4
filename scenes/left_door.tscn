@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://c4n3tp6ndvwkb" path="res://script/left_door.gd" id="1_s8ckj"]
 [ext_resource type="Texture2D" uid="uid://bl247xwqo1dro" path="res://assets/images/Zoom_Sol.png" id="2_kdfq7"]
-[ext_resource type="Texture2D" uid="uid://cbqlelyumc22" path="res://assets/images/monstre_couloir_gauche_loin.png" id="4_e4tfe"]
 [ext_resource type="Shader" uid="uid://b6bq4i7wlphpd" path="res://scenes/right_door.gdshader" id="4_mupj1"]
 [ext_resource type="Texture2D" uid="uid://21l7goqscbjo" path="res://assets/images/Zoom_Porte_Gauche.png" id="4_prkq2"]
 [ext_resource type="Texture2D" uid="uid://c3qwcanwk3p0r" path="res://assets/images/Porte_Ferme_Gauche.png" id="6_meafx"]
@@ -51,9 +50,10 @@ expand_mode = 1
 
 [node name="FondCouloir" type="TextureRect" parent="MainInterface/Zoom_Porte_gauche" unique_id=1553096323]
 layout_mode = 0
-offset_right = 863.6295
+offset_right = 1158.0
+offset_bottom = 651.0
 mouse_filter = 2
-texture = ExtResource("4_e4tfe")
+texture = ExtResource("4_prkq2")
 expand_mode = 3
 
 [node name="DarkOverlay" type="ColorRect" parent="MainInterface/Zoom_Porte_gauche" unique_id=1905816897]

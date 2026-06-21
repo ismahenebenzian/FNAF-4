@@ -11,10 +11,10 @@ extends Control
 var torch_on = false
 var armoire_ouverte = true
 
-var pos_gauche_ouverte = Vector2(-180, 0)
-var pos_droite_ouverte = Vector2(180, 0)
-var pos_gauche_fermee = Vector2(-350, 0)
-var pos_droite_fermee = Vector2(350, 0)
+var pos_gauche_ouverte = Vector2(-130, 0)
+var pos_droite_ouverte = Vector2(130, 0)
+var pos_gauche_fermee = Vector2(-550, 0)
+var pos_droite_fermee = Vector2(550, 0)
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
