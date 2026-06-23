@@ -63,7 +63,6 @@ Le jeu repose énormément sur l'audio :
 
 - Dès que le monstre passe en position `DEVANT`, un **souffle inquiétant** se déclenche automatiquement.
 - Ce son s'arrête dès que le monstre s'éloigne (retour à `APPARITION`).
-- **Conseil** : jouez avec un casque ou des écouteurs. Si vous entendez un souffle, vous savez qu'une porte est en danger : réagissez vite !
 
 ---
 
@@ -102,4 +101,4 @@ Ce projet est un travail étudiant. Certaines fonctionnalités ne sont pas encor
 
 ---
 
-**Bonne chance… et surtout, restez à l'écoute !** 👻
+**Bonne chance… et surtout, restez à l'écoute !** 
