@@ -90,7 +90,7 @@ Ce projet est un travail étudiant. Certaines fonctionnalités ne sont pas encor
 - **Godot 4** – Moteur de jeu gratuit et open-source  
 - **GDScript** – Langage de programmation (proche du Python)  
 - **GitHub** – Gestion de versions  
-- **Trello** – Organisation des tâches (tableau Kanban)
+- **Trello** – Organisation des tâches
 
 ---
 
