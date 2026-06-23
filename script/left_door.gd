@@ -16,6 +16,7 @@ var door_is_closed = false
 var can_interact = false
 var porte_tenue_timer : float = 0.0
 var porte_tenue_active : bool = false
+var monstre_en_fuite : bool = false
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
@@ -38,7 +39,8 @@ func _ready():
 	_update_visuel_monstre()
 
 func _process(delta):
-	_update_visuel_monstre()
+	if not monstre_en_fuite:
+		_update_visuel_monstre()
 	_update_son_souffle()
 
 	if porte_tenue_active and door_is_closed:
@@ -52,8 +54,12 @@ func _input(event):
 	if event is InputEventKey and event.keycode == KEY_SPACE:
 		torch_on = event.pressed
 		update_torch()
-		if torch_on and MonstreManager.etat == MonstreManager.Etat.COULOIR_GAUCHE_LOIN:
+		if torch_on and MonstreManager.etat == MonstreManager.Etat.COULOIR_GAUCHE_LOIN and not monstre_en_fuite:
+			monstre_en_fuite = true
+			fond_couloir.texture = tex_loin
+			await get_tree().create_timer(0.5).timeout
 			MonstreManager.retour_spawn()
+			monstre_en_fuite = false
 		elif torch_on and MonstreManager.etat == MonstreManager.Etat.COULOIR_GAUCHE_DEVANT:
 			get_tree().change_scene_to_file("res://scenes/screamer.tscn")
 

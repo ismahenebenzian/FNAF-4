@@ -4,7 +4,7 @@ enum Etat { SPAWN, COULOIR_GAUCHE_LOIN, COULOIR_GAUCHE_DEVANT, COULOIR_DROITE_LO
 
 var etat : Etat = Etat.SPAWN
 var timer_mouvement : float = 0.0
-var DELAI := 10.0
+var DELAI := 3.0
 
 func _process(delta):
 	timer_mouvement += delta
@@ -13,7 +13,7 @@ func _process(delta):
 		_tenter_deplacement()
 
 func _tenter_deplacement():
-	if randf() > 0.6:  # 3/5 de chance de bouger
+	if randf() > 0.4:
 		return
 	match etat:
 		Etat.SPAWN:
